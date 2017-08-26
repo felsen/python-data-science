@@ -1,0 +1,41 @@
+Variables will make your code reproducibile.
+
+Python Data Types:
+       Strings          - Python way of representing the strings.
+       Booleans         - Python way of representing the True / False.
+       float            - To represent float number.
+       int              - To represent int number.
+       list             - Represent all the elements in a list.
+                          - slicing [start(inclusive): end(exclusive): step]
+                          
+
+
+
+
+Numpy:
+
+        height = [1.73, 1.68, 1.71, 1.89, 1.79] # This is normal python list.
+        weight = [65.4, 59.2, 63.6, 88.4, 68.7] # This is normal python list.
+
+        weight / (height ** 2)                  # will cause the error.
+
+        python_list = [1, 2, 3]
+        python_list + python_list               # [1, 2, 3, 1, 2, 3]
+
+        -----------------------------------------------------------------------
+
+        import numpy as np
+
+        np_height = np.array(height)            # Numpy array.
+        np_weight = np.array(weight)            # Numpy array.
+
+        bmi = np_weight / (np_height ** 2)      # This will give you the result.
+
+        numpy_list = [1, 2, 3]
+        numpy_list + numpy_list                 # array([2, 4, 6])
+
+        
+
+
+
+
