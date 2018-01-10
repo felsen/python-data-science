@@ -13,7 +13,7 @@ def prime(n):
             if number.index(div_number) == number.index(number[-1]):
                 pos = pos + 1
                 position = 1
-            if number[position+1] % div_number == 0:
+            if number[position+1] % div_number == 0: # Error: if its trying to divide in the last number from the list.
                 number.remove(number[position+1])
                 position_number = div_number
             position = position + 1
@@ -21,4 +21,4 @@ def prime(n):
     except IndexError:
         return number
 
-print(prime(99))
+print(prime(50))
