@@ -19,3 +19,23 @@ class Node:
 
     def set_next(self, new_next):
         self.next = new_next
+
+
+class UnorderedList:
+    
+    def __init__(self, ):
+        self.head = None
+
+    def is_empty(self, ):
+        return self.head == None
+
+    def add(self, item):
+        temp = Node(item)
+        temp.set_next(self.head)
+        self.head = temp
+
+
+mylist = UnorderedList()
+mylist.add(10)
+
+
