@@ -18,3 +18,14 @@ def sum_of_list_2(num_list):
         return num_list[0] + sum_of_list_2(num_list[1:])
 
 print(sum_of_list_2([1,2,3,4,5,6,7,8,9]))
+
+
+def to_str(n, base):
+    convert_string = "0123456789ABCDEF"
+    if n < base:
+        return convert_string[n]
+    else:
+        return to_str(n / base, base) + convert_string[n % base]
+
+print(to_str(1453, 16))
+
