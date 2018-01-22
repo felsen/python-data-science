@@ -12,6 +12,7 @@ def seq_search_1(search_lst, search_item):
         for i in search_lst:
             if search_item == search_lst[element]:
                 found = True
+                break
             else:
                 element = element + 1
     return (found, search_item, element)
@@ -26,11 +27,18 @@ def seq_search_2(search_lst, search_item):
     while position < len(search_lst) and not found:
         if search_lst[position] == search_item:
             found = True
+            break
         else:
             position = position + 1
     return (found, search_item, position)
 
-
 print(seq_search_2([1, 2, 3, 4, 5, 6, 7, 8, 9], 8))
 print(seq_search_2([1, 2, 3, 4, 5, 6, 7, 8, 9], 12))
+
+
+
+
+
+
+
 
