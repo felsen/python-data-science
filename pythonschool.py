@@ -46,6 +46,13 @@ comparing the first two elements and swaping those two elements and for other el
 
 Example: bubble_sort() function.
 
+Insertion Sort:
+---------------
+Inserting the item one by one and comparing with the other elements.
+
+Example: insertion_sort() function.
+
+
 """
 
 
@@ -96,4 +103,19 @@ def bubble_sort(sort_list):
     return sort_list
 
 print(bubble_sort([1,85,4,3,2,5,6,7]))
+
+
+def insertion_sort(sort_list):
+    for i in sort_list:
+        ind = sort_list.index(i)
+        while (ind > 0):
+            if sort_list[ind-1] > sort_list[ind]:
+                sort_list[ind-1], sort_list[ind] = sort_list[ind], sort_list[ind-1]
+            else:
+                break
+            ind = ind - 1
+    return sort_list
+
+print(insertion_sort([1, 5, 4, 3, 2, 6, 7, 8]))
+print(insertion_sort([16, 19, 11, 15, 10, 12, 14]))
 
