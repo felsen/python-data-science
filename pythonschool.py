@@ -39,6 +39,13 @@ then travelling from start to end in each list.
 
 Example: binary_search(), binary_search_1() function.
 
+Bubble Sort:
+------------
+There are many ways to do Bubble sort; This is one of the efficient way to sort list.
+comparing the first two elements and swaping those two elements and for other elements also.
+
+Example: bubble_sort() function.
+
 """
 
 
@@ -77,4 +84,16 @@ def binary_search_1(search_list, search_item):
         return linear_search(search_list[midpoint:], search_item)
 
 print(binary_search_1([2, 3, 4, 5, 6, 7, 8, 9, 10], 7))
+
+
+def bubble_sort(sort_list):
+    for i in range(len(sort_list)):
+        for j in range(i):
+            if sort_list[j] > sort_list[j+1]:
+                temp = sort_list[j]
+                sort_list[j] = sort_list[j+1]
+                sort_list[j+1] = temp
+    return sort_list
+
+print(bubble_sort([1,85,4,3,2,5,6,7]))
 
