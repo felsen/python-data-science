@@ -1,5 +1,4 @@
 """
-
 Ref: https://pythonschool.net/data-structures-algorithms/algorithms-and-data-structures/
 
 Algorithm's and Data Structure's:
@@ -13,7 +12,6 @@ Algorithm's:
 3) Bubble Sort
 4) Insertion Sort
 5) Quick Sort
-
 
 Data Structure's:
 -----------------
@@ -34,13 +32,12 @@ Always this will start from the position 0.
 
 Example: linear_search() function.
 
-
 Binary Search:
 --------------
 Finding the midpoint of the list, then spliting into two list.
 then travelling from start to end in each list.
 
-Example: binary_search() function.
+Example: binary_search(), binary_search_1() function.
 
 """
 
@@ -57,10 +54,27 @@ print(linear_search([23, 56, 2, 9, 5, 7, 78, 45], 5))
 
 
 def binary_search(search_list, search_item):
-    midpoint = len(search_list) // 2  # Python3.6
-    if search_list[:midpoint][-1] > search_item:
-        return linear_search(search_list[:midpoint], search_item)
-    else:
-        return linear_search(search_list[midpoint:], search_item)
+    first, last, found = 0, len(search_list)-1, False
+    while first <= last and not found:
+        midpoint = (first + last) // 2  # Python3.6
+        if search_list[midpoint] == search_item:
+            found = True
+        else:
+            if search_item < search_list[midpoint]:
+                last = midpoint - 1
+            else:
+                first = midpoint + 1
+    return (found, search_item, search_list)
 
 print(binary_search([2, 3, 4, 5, 6, 7, 8, 9, 10], 7))
+
+
+def binary_search_1(search_list, search_item):
+    midpoint = len(search_list) // 2  # Python3.6
+    if search_list[:midpoint][-1] >= search_item:
+        return linear_search(search_list[:midpoint], search_item)
+    elif search_list[midpoint:][-1] >= search_item:
+        return linear_search(search_list[midpoint:], search_item)
+
+print(binary_search_1([2, 3, 4, 5, 6, 7, 8, 9, 10], 7))
+
