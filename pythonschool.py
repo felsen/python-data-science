@@ -52,6 +52,12 @@ Inserting the item one by one and comparing with the other elements.
 
 Example: insertion_sort() function.
 
+Stack:
+------
+FILO - First In Last Out
+Stack will store all the items one by one, when it's takes out the last item will taken first.
+
+Example: Stack class.
 
 """
 
@@ -118,4 +124,40 @@ def insertion_sort(sort_list):
 
 print(insertion_sort([1, 5, 4, 3, 2, 6, 7, 8]))
 print(insertion_sort([16, 19, 11, 15, 10, 12, 14]))
+
+
+class Stack:
+    
+    """
+    Simple stack implementation.
+    """
+
+    def __init__(self):
+        self.stack_data = []
+
+    def is_empty(self):
+        return self.stack_data == []
+
+    def push(self, item):
+        self.stack_data.append(item) # Each item will be added in the stack.
+
+    def pop(self):
+        self.stack_data.pop() # Item will be removed which is added last.
+
+    def peek(self):
+        return self.stack_data[len(self.stack_data)-1] # This will show, the item which is going to remove.
+
+    def size(self):
+        return len(self.stack_data) # Total size of the stack
+
+sd = Stack()
+sd.push("felix")
+sd.push("stephen")
+sd.push("steve")
+sd.push("felsen")
+print(sd.stack_data)
+sd.pop()
+print(sd.peek())
+sd.pop()
+print(sd.peek())
 
