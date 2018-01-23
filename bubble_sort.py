@@ -3,10 +3,7 @@ Bubble Sort ;
 
 Comparing the first tow element, once get satisfied then will be started to compare the next element's.
 
-http://www.geekviewpoint.com/python/sorting/insertionsort
-
-https://www.studytonight.com/data-structures/insertion-sorting
-
+https://www.pythoncentral.io/bubble-sort-implementation-guide/
 """
 
 def bubble_sort(sort_list):
