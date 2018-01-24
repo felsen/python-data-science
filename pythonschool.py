@@ -276,3 +276,9 @@ class LinkedList:
                 current = current.get_next_data()
         return found
 
+
+
+
+# Binary Tree:
+# Ref: https://gist.github.com/samidhtalsania/6659380
+
