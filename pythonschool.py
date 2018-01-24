@@ -232,9 +232,47 @@ class Node:
         self.data = data
         self.next = next
 
-    def has_data(self):
+    def get_data(self):
+        return self.data  # Getting the current data
+
+    def get_next_data(self):
+        return self.next  # Getting the next data
+
+    def set_data(self, item):
+        self.data = item  # Setting the new data
+
+    def set_next_data(self, item):
+        self.next = item  # Setting the next data
+
+
+class LinkedList:
+
+    def __init__(self, head=None):
+        self.head = None
+
+    def is_empty(self):
+        return self.head == None
+
+    def add(self, item):
+        node = Node(item)
+        node.set_next_data(self.head)
+        self.head = node
+
+    def size(self):
+        current = self.head
+        count = 0
+        while current != None:
+            count += 1
+            current = current.get_next_data()
+        return count
+
+    def search(self, item):
+        current = self.head
         found = False
-        if data is not None:
-            found = True
+        while current != None and not found:
+            if current.get_next_data() == item:
+                found = True
+            else:
+                current = current.get_next_data()
         return found
 
