@@ -59,6 +59,30 @@ Stack will store all the items one by one, when it's takes out the last item wil
 
 Example: Stack class.
 
+Queue:
+------
+FIFO - First In First Out
+Queue will store all the items one by one, first entered item will always taken first out.
+
+Example: Queue class
+
+Linked List:
+------------
+Each item will be considered as a Node; Every node will be connected with next node using pointers.
+
+There are three types of linked list,
+   1) Singly Linked List
+   2) Doubly Linked List
+   3) Circular Linked List
+
+Reference: 
+   http://stackabuse.com/python-linked-lists/
+   https://dbader.org/blog/python-linked-list
+   https://www.pythoncentral.io/singly-linked-list-insert-node/
+
+Example: Node class
+
+
 """
 
 
@@ -70,7 +94,7 @@ def linear_search(search_list, search_item):
         position += 1
     return (found, search_item, position, search_list)
 
-print(linear_search([23, 56, 2, 9, 5, 7, 78, 45], 5))
+# print(linear_search([23, 56, 2, 9, 5, 7, 78, 45], 5))
 
 
 def binary_search(search_list, search_item):
@@ -86,7 +110,7 @@ def binary_search(search_list, search_item):
                 first = midpoint + 1
     return (found, search_item, search_list)
 
-print(binary_search([2, 3, 4, 5, 6, 7, 8, 9, 10], 7))
+# print(binary_search([2, 3, 4, 5, 6, 7, 8, 9, 10], 7))
 
 
 def binary_search_1(search_list, search_item):
@@ -96,7 +120,7 @@ def binary_search_1(search_list, search_item):
     elif search_list[midpoint:][-1] >= search_item:
         return linear_search(search_list[midpoint:], search_item)
 
-print(binary_search_1([2, 3, 4, 5, 6, 7, 8, 9, 10], 7))
+# print(binary_search_1([2, 3, 4, 5, 6, 7, 8, 9, 10], 7))
 
 
 def bubble_sort(sort_list):
@@ -108,7 +132,7 @@ def bubble_sort(sort_list):
                 sort_list[j+1] = temp
     return sort_list
 
-print(bubble_sort([1,85,4,3,2,5,6,7]))
+# print(bubble_sort([1,85,4,3,2,5,6,7]))
 
 
 def insertion_sort(sort_list):
@@ -122,8 +146,8 @@ def insertion_sort(sort_list):
             ind = ind - 1
     return sort_list
 
-print(insertion_sort([1, 5, 4, 3, 2, 6, 7, 8]))
-print(insertion_sort([16, 19, 11, 15, 10, 12, 14]))
+# print(insertion_sort([1, 5, 4, 3, 2, 6, 7, 8]))
+# print(insertion_sort([16, 19, 11, 15, 10, 12, 14]))
 
 
 class Stack:
@@ -142,7 +166,7 @@ class Stack:
         self.stack_data.append(item) # Each item will be added in the stack.
 
     def pop(self):
-        self.stack_data.pop() # Item will be removed which is added last.
+        self.stack_data.pop() # Item will be removed which is added recently.
 
     def peek(self):
         return self.stack_data[len(self.stack_data)-1] # This will show, the item which is going to remove.
@@ -150,14 +174,67 @@ class Stack:
     def size(self):
         return len(self.stack_data) # Total size of the stack
 
-sd = Stack()
-sd.push("felix")
-sd.push("stephen")
-sd.push("steve")
-sd.push("felsen")
-print(sd.stack_data)
-sd.pop()
-print(sd.peek())
-sd.pop()
-print(sd.peek())
+# sd = Stack()
+# sd.push("felix")
+# sd.push("stephen")
+# sd.push("steve")
+# sd.push("felsen")
+# print(sd.stack_data)
+# sd.pop()
+# print(sd.peek())
+# sd.pop()
+# print(sd.peek())
+
+
+class Queue:
+
+    """
+    Simple Queue Implementation.
+    """
+
+    def __init__(self):
+        self.queue_data = []
+
+    def is_empty(self):
+        return self.queue_data == []
+
+    def push(self, item):
+        self.queue_data.append(item) # All the items will be added in the queue.
+
+    def pop(self):
+        self.queue_data.pop(0) # Item will be removed 
+
+    def size(self):
+        return len(self.queue_data)
+
+    def peek(self):
+        return self.queue_data[0]
+
+# qd = Queue()
+# qd.push("felix")
+# qd.push("stephen")
+# qd.push("steve")
+# qd.push("felsen")
+# print(qd.queue_data)
+# qd.pop()
+# print(qd.peek())
+# qd.pop()
+# print(qd.peek())
+
+
+class Node:
+    
+    """
+    Node Implementation for Linked List.
+    """
+
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
+
+    def has_data(self):
+        found = False
+        if data is not None:
+            found = True
+        return found
 
