@@ -60,7 +60,53 @@ Keyword Argument's:
 
 Error:
     TypeError: function() missing 2 required positional arguments: arg1, arg2
+
+Optional Argument's:
+    To aviod argument's error pass the default value to the positional argument's.
 """
 
 
+class Dog:
+    
+    """
+    Dog sitting / rolling model.
+    """
+    
+    def __init__(self, name=None, age=None):
+        """
+        Dog is the class which has initiated with the name and age.
+        """
+        self.name = name
+        self.age = age
+
+    def sit(self):
+        """
+        Dog sitting command.
+        """
+        return "{} is now sitting..".format(self.name.title())
+
+    def roll(self):
+        """
+        Dog rolling command.
+        """
+        return "{} is rolling now..".format(self.name.title())
+    
+
+class Car:
+    
+    """
+    Simple attempt to represent a car.
+    """
+
+    def __init__(self, make=None, model=None, year=None):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        return "{} car {} model {} make".format(make.title(), model.title(), year)
+
+    def read_odometer(self):
+        return "Speed of the car per KM {}".format(self.odometer_reading)
 
