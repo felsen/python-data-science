@@ -125,5 +125,23 @@ class Car:
         """
         Updating the odometer value in the device.
         """
-        self.odometer_reading = milage
+        if self.odometer_reading <= milage:
+            self.odometer_reading = milage:
+
+    def increment_odometer(self, milage):
+        """
+        Incrementing the odometer value.
+        """
+        self.odometer_reading += milage
+
+
+class ElectricCar(Car):
+    """
+    Passing parent class arguments to child class( Inheritance )
+    """
+    def __init__(self, make, model, year):
+        """
+        Initialize the attributes of parent class
+        """
+        super().__init__(make, model, year)
 
