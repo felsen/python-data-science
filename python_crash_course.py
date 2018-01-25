@@ -135,6 +135,30 @@ class Car:
         self.odometer_reading += milage
 
 
+class Battery:
+    """
+    creating the new battery instance.
+    """
+    def __init__(self, battery_size=70):
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """
+        Battery size description.
+        """
+        return "The Battery size of the {} -kWh".format(self.battery_size)
+
+    def get_range(self):
+        """
+        Get range of the travelling by calculating the level of battery.
+        """
+        if self.battery_size == 70:
+            speed_range = 240
+        elif self.battery_size == 80:
+            speed_range = 270
+        return "This can go approxmately {}".format(speed_range)
+
+
 class ElectricCar(Car):
     """
     Passing parent class arguments to child class( Inheritance )
@@ -144,4 +168,27 @@ class ElectricCar(Car):
         Initialize the attributes of parent class
         """
         super().__init__(make, model, year)
+        self.battery = Battery()
+
+    def fill_gas_tank(self):
+        """
+        This will return the gas tank is filled or not.
+        """
+        return "Gas tank is filled"
+
+
+class AnonymousSurvey:
+    
+    def __init__(self, question):
+        self.question = question
+        self.response = []
+
+    def show_question(self):
+        return self.question
+
+    def store_response(self, answer):
+        self.response.append(answer)
+
+    def show_response(self):
+        return self.response
 
