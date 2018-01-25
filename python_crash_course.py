@@ -99,14 +99,31 @@ class Car:
     """
 
     def __init__(self, make=None, model=None, year=None):
+        """
+        Initiating a car variable with basic attributes.
+        """
         self.make = make
         self.model = model
         self.year = year
         self.odometer_reading = 0
 
     def get_descriptive_name(self):
-        return "{} car {} model {} make".format(make.title(), model.title(), year)
+        """
+        Getting a full descriptive name of the car.
+        """
+        return "{} car {} model {} make".format(self.make.title(),
+                                                self.model.title(),
+                                                self.year)
 
     def read_odometer(self):
+        """
+        Reading the odometer value.
+        """
         return "Speed of the car per KM {}".format(self.odometer_reading)
+
+    def update_odometer(self, milage):
+        """
+        Updating the odometer value in the device.
+        """
+        self.odometer_reading = milage
 
