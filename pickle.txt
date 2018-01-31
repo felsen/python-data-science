@@ -1,0 +1,12 @@
+(lp0
+S'test_value'
+p1
+aS'test_value_1'
+p2
+aS'test_value_2'
+p3
+aS'test_value_3'
+p4
+aS'test_value_4'
+p5
+a.
