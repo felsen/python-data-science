@@ -5,8 +5,9 @@ property.
 
 class Person:
 
-    def __init__(self, first_name):
+    def __init__(self, first_name, last_name):
         self.first_name = first_name
+        self.last_name = last_name
 
     @property
     def first_name(self):
@@ -15,15 +16,18 @@ class Person:
     @first_name.setter
     def first_name(self, value):
         if not isinstance(value, str):
-            raise AttributeError("Expected string.")
+            raise TypeError("Expected string.")
         self._first_name = value
 
-    # @first_name.deleter
-    # def first_name(self):
-    #     raise AttributeError("Can't delete attribute.")
+    @property
+    def last_name(self):
+        self._last_name
 
-    def __del__(self):
-        raise AttributeError("Can't delete attribute")
+    @last_name.setter
+    def last_name(self, value):
+        if not isinstance(value, str):
+            raise TypeError("Expected string.")
+        self._last_name
 
 
 p = Person("felix")
