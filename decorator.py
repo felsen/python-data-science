@@ -7,7 +7,6 @@ import logging
 
 
 def debug(func):
-
     msg = func.__qualname__  # applicable only in Python3.x version
 
     @wraps(func)
@@ -70,6 +69,7 @@ def add(x, y):
     c = x + y
     return c
 
+
 print(add(10, 5))
 
 
@@ -80,5 +80,5 @@ def sub(x, y):
     c = x - y
     return c
 
-print(sub(10, 5))
 
+print(sub(10, 5))

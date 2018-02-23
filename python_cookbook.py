@@ -1,6 +1,9 @@
 """
-Un-packing the elements from the sequence. discarding the special value from the sequence.
+Un-packing the elements from the sequence.
+discarding the special value from the sequence.
 """
+from collections import deque
+
 
 p = (1, 2, 3, 4)
 v, x, y, z = p
@@ -28,7 +31,6 @@ print(a, b, c)
 
 """
 unpacking the vlaue using *
-
 """
 
 user_detail = ["felix", "stephen", "felsen", 987654321, 987654321, 8765432239]
@@ -55,4 +57,16 @@ print(item)
 print(head, tail)
 
 
+"""
+Deque maxlen when the new items are added than the old will be
+removed based on the length of the queue.
+"""
 
+
+q = deque(maxlen=3)
+q.append(1)
+q.append(2)
+q.append(3)  # The len of the queue is 3, the fixed size of the queue is 3.
+print(q)     # deque([1, 2, 3])
+q.append(4)  # New item is added and first item will be removed.
+print(q)     # deque([2, 3, 4])
