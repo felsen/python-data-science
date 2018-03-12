@@ -7,7 +7,7 @@ import re
 def reverse_polish_notation(expression):
     expr_lst = ["+", "-", "*", "/"]
     print(re.findall(r"(\d+)", expression))
-    print(re.findall(r"(\W+)", expression))
+    print(filter(None, re.findall(r"\W+", expression)))
 
 
 

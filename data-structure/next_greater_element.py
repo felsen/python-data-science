@@ -2,6 +2,13 @@
 Next Greater Element 
 """
 
+import __main__ as main
+
+
+def nxt_sort(nxt):
+    
+    return nxt
+
 
 def next_greater_element(arr):
     """
